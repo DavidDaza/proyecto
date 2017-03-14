@@ -135,51 +135,66 @@
         </nav>
 
         <!--Fin menu superior-->
-        <div class="container">
-            <div class="row">
-                <br>
-                <br>
+        
+        <!--inicio contenido jeferson rincon-->
+    <div class="container">
+      <div class="row">
+        <div class="btn-group btn-group-justified">
+          <div class="btn-group">
+            <button type="button" class="btn btn-nav">
+              <span class="glyphicon glyphicon-folder-close"></span>
+              <p>Pedidos</p>
+            </button>
+          </div>
 
-
-
-                <div id="pie">
-                    <% if (request.getAttribute("exito") != null) { %>
-                    ${exito}
-                    <%java.util.Date hora = new java.util.Date();%>
-                    <%if (hora.getTime() > 13) {%>
-                    <div class="alert alert-info">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Buenas Tardes apreciado Administrador!</strong>¿Como se encuentra?
+          <!--prueba calendario-->
+          <div class="btn-group">
+            <button type="button" class="btn btn-nav" data-toggle="modal"data-target="#myMod">
+              <span class="glyphicon glyphicon-calendar"></span>
+              <p>Calendario</p>
+            </button>
+            <div class="modal fade" id="myMod" role="dialog">
+              <div class="modal-dialog">
+              </div>
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <!--calendario-->
+                  <div style="overflow:hidden;">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div id="datetimepicker12"></div>
+                        </div>
+                      </div>
                     </div>
-                    <%} else if (hora.getTime() > 12) {%>
-                    <div class="alert alert-info">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Buenas Tardes apreciado Administrador!</strong>¿Como se encuentra?
-                    </div>
-                    <% } else {%>
-                    <div class="alert alert-info">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Buenas Tardes apreciado Administrador!</strong> ¿Como se encuentra?
-                    </div>     
-                    <%}%>
-                    <%}%>
-                </div>
-                <div class="well">
-                    <h4>Lorem ipsum dolor sit amet</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed consectetur urna. Nullam in dictum velit, tincidunt tempor urna. Nulla facilisi. Phasellus a nibh nec risus lobortis feugiat quis quis felis. Sed vitae ante tortor. Fusce tincidunt accumsan risus ut mollis. Donec hendrerit sit amet erat et scelerisque. Sed efficitur interdum diam, sit amet tempus purus vehicula sed. Sed tincidunt, odio vitae suscipit luctus, lectus leo rutrum magna, nec sodales nulla erat sit amet turpis. In sollicitudin sed libero aliquet auctor. Proin cursus elit odio, a sollicitudin augue gravida ac. Cras commodo mollis posuere. Pellentesque sed condimentum erat, sit amet egestas ipsum. Praesent tincidunt turpis vel magna semper, sed iaculis magna aliquam. Ut ornare augue at mollis maximus. </p>
-                    <p>Nullam non enim erat. Donec eu sapien velit. Sed sed sem quis ipsum vehicula tempor id in velit. Etiam molestie tempus feugiat. Nunc aliquet suscipit odio, vel eleifend diam sodales at. Phasellus blandit nunc sapien, non venenatis nisl tincidunt vitae. Pellentesque luctus neque velit, gravida malesuada odio pellentesque vel. </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed consectetur urna. Nullam in dictum velit, tincidunt tempor urna. Nulla facilisi. Phasellus a nibh nec risus lobortis feugiat quis quis felis. Sed vitae ante tortor. Fusce tincidunt accumsan risus ut mollis. Donec hendrerit sit amet erat et scelerisque. Sed efficitur interdum diam, sit amet tempus purus vehicula sed. Sed tincidunt, odio vitae suscipit luctus, lectus leo rutrum magna, nec sodales nulla erat sit amet turpis. In sollicitudin sed libero aliquet auctor. Proin cursus elit odio, a sollicitudin augue gravida ac. Cras commodo mollis posuere. Pellentesque sed condimentum erat, sit amet egestas ipsum. Praesent tincidunt turpis vel magna semper, sed iaculis magna aliquam. Ut ornare augue at mollis maximus. </p>
-                    <p>Nullam non enim erat. Donec eu sapien velit. Sed sed sem quis ipsum vehicula tempor id in velit. Etiam molestie tempus feugiat. Nunc aliquet suscipit odio, vel eleifend diam sodales at. Phasellus blandit nunc sapien, non venenatis nisl tincidunt vitae. Pellentesque luctus neque velit, gravida malesuada odio pellentesque vel. </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed consectetur urna. Nullam in dictum velit, tincidunt tempor urna. Nulla facilisi. Phasellus a nibh nec risus lobortis feugiat quis quis felis. Sed vitae ante tortor. Fusce tincidunt accumsan risus ut mollis. Donec hendrerit sit amet erat et scelerisque. Sed efficitur interdum diam, sit amet tempus purus vehicula sed. Sed tincidunt, odio vitae suscipit luctus, lectus leo rutrum magna, nec sodales nulla erat sit amet turpis. In sollicitudin sed libero aliquet auctor. Proin cursus elit odio, a sollicitudin augue gravida ac. Cras commodo mollis posuere. Pellentesque sed condimentum erat, sit amet egestas ipsum. Praesent tincidunt turpis vel magna semper, sed iaculis magna aliquam. Ut ornare augue at mollis maximus. </p>
-                    <p>Nullam non enim erat. Donec eu sapien velit. Sed sed sem quis ipsum vehicula tempor id in velit. Etiam molestie tempus feugiat. Nunc aliquet suscipit odio, vel eleifend diam sodales at. Phasellus blandit nunc sapien, non venenatis nisl tincidunt vitae. Pellentesque luctus neque velit, gravida malesuada odio pellentesque vel. </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed consectetur urna. Nullam in dictum velit, tincidunt tempor urna. Nulla facilisi. Phasellus a nibh nec risus lobortis feugiat quis quis felis. Sed vitae ante tortor. Fusce tincidunt accumsan risus ut mollis. Donec hendrerit sit amet erat et scelerisque. Sed efficitur interdum diam, sit amet tempus purus vehicula sed. Sed tincidunt, odio vitae suscipit luctus, lectus leo rutrum magna, nec sodales nulla erat sit amet turpis. In sollicitudin sed libero aliquet auctor. Proin cursus elit odio, a sollicitudin augue gravida ac. Cras commodo mollis posuere. Pellentesque sed condimentum erat, sit amet egestas ipsum. Praesent tincidunt turpis vel magna semper, sed iaculis magna aliquam. Ut ornare augue at mollis maximus. </p>
-                    <p>Nullam non enim erat. Donec eu sapien velit. Sed sed sem quis ipsum vehicula tempor id in velit. Etiam molestie tempus feugiat. Nunc aliquet suscipit odio, vel eleifend diam sodales at. Phasellus blandit nunc sapien, non venenatis nisl tincidunt vitae. Pellentesque luctus neque velit, gravida malesuada odio pellentesque vel. </p>
+                  </div>
                 </div>
 
-
-
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
             </div>
+          </div>
+          <!--fin calendario-->
+
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-nav">
+              <span class="glyphicon glyphicon-globe"></span>
+              <p>Noticias</p>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-nav">
+              <span class="glyphicon glyphicon-bell"></span>
+              <p>Pendientes</p>
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
 
         <!-- /Main -->
 
