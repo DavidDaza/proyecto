@@ -8,135 +8,150 @@
 <%@page import="modelo.BEAN.BeanUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% HttpSession sesion = request.getSession(false);
-    String usuario1 = (String) sesion.getAttribute("admin");
-    String usuario2 = (String) sesion.getAttribute("usuario");
-    String nombre = (String) sesion.getAttribute("nombre");
-
-    if (sesion.getAttribute("usuario") != null) {
-        response.sendRedirect("menu.jsp");
-    } else if (sesion.getAttribute("admin") == null) {
-        response.sendRedirect("login.jsp");
-    }
+  String usuario1 = (String) sesion.getAttribute("admin");
+  String usuario2 = (String) sesion.getAttribute("usuario");
+  String nombre = (String) sesion.getAttribute("nombre");
 
 
 %>
 <!DOCTYPE html>
 <html >
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
-        <link rel="shortcut icon" href="imagenes/icono.png">  
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/_css.css" rel="stylesheet" type="text/css"/>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+    <link rel="shortcut icon" href="imagenes/icono.png">  
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/_css.css" rel="stylesheet" type="text/css"/>
+    <!--link redes sociales-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/css.redessociales.css" rel="stylesheet" type="text/css"/>
 
-        <title>Menu Inicio</title>
-    </head>
-    <body class="bd">
+    <title>Menu Inicio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/_js.js" type="text/javascript"></script>
+  </head>
+  <body class="bd">
 
-        <%             BeanUsuario beanUs = new BeanUsuario();
-            DaoUsuario daoUs = new DaoUsuario();
-            beanUs.setCorreo(usuario1);
-            daoUs.contruirObjetoUsuario(beanUs);
-        %>
+    <%             BeanUsuario beanUs = new BeanUsuario();
+      DaoUsuario daoUs = new DaoUsuario();
+      beanUs.setCorreo(usuario1);
+      daoUs.contruirObjetoUsuario(beanUs);
+    %>
 
-        <nav class="navbar navbar-inverse" >
-            <div class="container">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>                        
-                        </button>
-                        <a class="navbar-brand" href="menu.jsp"><img src="imagenes/icono.png" alt=""/></a>
+    <nav class="navbar navbar-inverse" >
+      <div class="container">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="menu.jsp"><img src="imagenes/icono.png" alt=""/></a>
 
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
 
-                            <li class="active"><a href="menuAdmin.jsp">Inicio</a></li>
+              <li class="active"><a href="menuAdmin.jsp">Inicio</a></li>
 
-                            <!--Menu desplegable-->
-                            <li class="dropdown ">
+              <!--Menu desplegable-->
+              <li class="dropdown ">
 
-                                <a href="#" class="glyphicon glyphicon-wrench " data-toggle="dropdown" > Opciones  <span class="caret "></span> </a>
+                <a href="#" class="glyphicon glyphicon-wrench " data-toggle="dropdown" > Opciones  <span class="caret "></span> </a>
 
-                                <ul class="dropdown-menu ">
+                <ul class="dropdown-menu ">
 
-                                    <li class="col-sm-3">
-                                    <li><a href="menuA_listar.jsp?pagina=0"><i class="glyphicon glyphicon-list"></i> Listar de Usuarios </a></li>
-
-
-
-                                </ul>
-                            </li>
-                            <!--Menu fin desplegable-->
-                            <!--Menu desplegable-->
-                           
-                                
-                            <li class="dropdown ">
-                                <a href="#" class="glyphicon glyphicon-option-vertical " data-toggle="dropdown"> Agregar/Editar  <span class="caret "></span> </a>
-
-                                <ul class="dropdown-menu ">
-
-                                    <li class="col-sm-3">
-                                    <li><a href="Adduniformes.jsp"><i class="glyphicon glyphicon-tasks"></i> Uniformes Catalogo </a></li>
-                                    <li><a href=""><i class="glyphicon glyphicon-question-sign"></i> Prendas </a></li>
-                                    <li><a href=""><i class="glyphicon glyphicon-question-sign"></i> Instituciones </a></li>
+                  <li class="col-sm-3">
+                  <li><a href="menuA_listar.jsp?pagina=0"><i class="glyphicon glyphicon-list"></i> Listar de Usuarios </a></li>
 
 
 
-                                </ul>
-                            </li>
-                           
-                            <!--Menu fin desplegable-->
-                            <!--Menu desplegable-->
-                            <li class="dropdown ">
-
-                                <a href="#" class="glyphicon glyphicon-globe " data-toggle="dropdown" > Redes Sociales  <span class="caret "></span> </a>
-
-                                <ul class="dropdown-menu ">
-
-                                    <li class="col-sm-3">
-                                    <li><a href=""><i class="glyphicon glyphicon-question-sign"></i> FaceBook </a></li>
-                                    <li><a href=""><i class="glyphicon glyphicon-question-sign"></i> Twitter </a></li>
+                </ul>
+              </li>
+              <!--Menu fin desplegable-->
+              <!--Menu desplegable-->
 
 
+              <li class="dropdown ">
+                <a href="#" class="glyphicon glyphicon-option-vertical " data-toggle="dropdown"> Agregar/Editar  <span class="caret "></span> </a>
 
+                <ul class="dropdown-menu ">
 
-                                </ul>
-                            </li>
-                            <!--Menu fin desplegable-->
+                  <li class="col-sm-3">
+                  <li><a href="Adduniformes.jsp"><i class="glyphicon glyphicon-tasks"></i> Uniformes Catalogo </a></li>
+                  <li><a href=""><i class="glyphicon glyphicon-question-sign"></i> Prendas </a></li>
+                  <li><a href=""><i class="glyphicon glyphicon-question-sign"></i> Instituciones </a></li>
 
 
 
+                </ul>
+              </li>
 
-                        </ul>
+              <!--Menu fin desplegable-->
 
+              <!--Menu redes sociales-->
+              <li class="dropdown ">
+                <div class="col-md-12">
 
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                 <a href="#" data-toggle="dropdown"><img src="imagenes/avatar4.png" alt=""/><b> <%= beanUs.getNombre1()%></b> <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="listarMensajes.jsp"><i class="icon-envelope"></i> Mensajes <span class="badge badge-info">4</span></a></li>
-                                    <li><a href="iniciar?textOpcion=3">Salir<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>  
-                                    <li class="divider"></li>
-
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-
-
+                  <ul class="social-network social-circle">                   
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>                    
+                  </ul>				
                 </div>
-            </div>
-        </nav>
+              </li>
+              <!--Menu fin desplegable-->
 
-        <!--Fin menu superior-->
-        
-        <!--inicio contenido jeferson rincon-->
+
+
+
+            </ul>
+
+
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown"><img src="imagenes/avatar4.png" alt=""/><b> <%= beanUs.getNombre1()%></b> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="listarMensajes.jsp"><i class="icon-envelope"></i> Mensajes <span class="badge badge-info">4</span></a></li>
+                  <li><a href="iniciar?textOpcion=3">Salir<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>  
+                  <li class="divider"></li>
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+
+        </div>
+      </div>
+    </nav>
+
+    <!--Fin menu superior-->
+
+    <!--presentacion administrador-->
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="text-center ">
+          <div class="user-image">
+            <!--hay que poner funcion para que cambie a la foto de administrador como tal-->
+            <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" alt="Karan Singh Sisodia" title="Karan Singh Sisodia" class="img-circle">
+          </div>
+          <div class="user-info-block">
+            <div class="user-heading">
+              <h3>David</h3> 
+              <span class="help-block">Administrador</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--inicio contenido jeferson rincon-->
     <div class="container">
       <div class="row">
         <div class="btn-group btn-group-justified">
@@ -196,14 +211,21 @@
       </div>
     </div>
 
-        <!-- /Main -->
+    <!-- /Main -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-        <footer class="container-fluid text-center">
-            <p>Footer ® David Daza</p>
-        </footer>
+    <footer class="container-fluid text-center">
+      <p>Footer ® David Daza</p>
+    </footer>
 
-        <script src="js/jquery.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/_js.js" type="text/javascript"></script>s
-    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/_js.js" type="text/javascript"></script>s
+  </body>
 </html>
